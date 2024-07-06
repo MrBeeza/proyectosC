@@ -1,0 +1,44 @@
+Función ft_putchar
+
+void ft_putchar(char c);
+
+Esta es una declaración de función, no una definición. Está diciendo que hay una función llamada ft_putchar que toma un argumento de tipo char llamado c y no devuelve nada (void). Esta función no está definida en este fragmento de código, pero es probable que imprima un solo carácter en la salida estándar.
+
+Función print_line
+
+void print_line(int columns, int left, int middle, int right)
+
+Esta función toma cuatro argumentos de tipo int:
+
+columns: el número de columnas en la línea
+left: el carácter que se imprimirá en el borde izquierdo de la línea
+middle: el carácter que se imprimirá en el medio de la línea
+right: el carácter que se imprimirá en el borde derecho de la línea
+Aquí está lo que hace la función:
+
+int position; declara una variable local position para mantener la posición actual de la columna.
+position = 1; inicializa position en 1.
+ft_putchar(left); imprime el carácter left al principio de la línea.
+while (position < columns - 1) es un bucle que se ejecutará mientras position sea menor que columns - 1.
+Dentro del bucle, ft_putchar(middle); imprime el carácter middle en la posición actual.
+position++; incrementa la posición actual en 1.
+Una vez que el bucle termina, if (columns > 1) ft_putchar(right); imprime el carácter right al final de la línea, siempre y cuando columns sea mayor que 1.
+Finalmente, ft_putchar('\n'); imprime un carácter de nueva línea (\n) para avanzar a la siguiente línea.
+Función rush
+
+void rush(int columns, int rows)
+
+Esta función toma dos argumentos de tipo int:
+
+columns: el número de columnas en la figura
+rows: el número de filas en la figura
+Aquí está lo que hace la función:
+
+int space; declara una variable local space para mantener la posición actual de la fila.
+space = 1; inicializa space en 1.
+print_line(columns, 'A', 'B', 'A'); llama a la función print_line con los argumentos columns, 'A', 'B' y 'A'. Esto imprime la primera fila de la figura con los caracteres 'A' en los bordes y 'B' en el medio.
+while (space < rows - 1) es un bucle que se ejecutará mientras space sea menor que rows - 1.
+Dentro del bucle, print_line(columns, 'B', ' ', 'B'); llama a la función print_line con los argumentos columns, 'B', espacio en blanco (' ') y 'B'. Esto imprime las filas intermedias de la figura con los caracteres 'B' en los bordes y espacio en blanco en el medio.
+space++; incrementa la posición actual de la fila en 1.
+Una vez que el bucle termina, if (rows > 1) print_line(columns, 'C', 'B', 'C'); llama a la función print_line con los argumentos columns, 'C', 'B' y 'C'. Esto imprime la última fila de la figura con los caracteres 'C' en los bordes y 'B' en el medio, siempre y cuando rows sea mayor que 1.
+En resumen, la función rush imprime una figura con bordes y relleno utilizando las funciones print_line y ft_putchar.
